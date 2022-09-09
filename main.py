@@ -16,21 +16,16 @@ report = f'{scored_0} scored in the {goal_0}nd minute\n{scored_1} scored in the 
 
 player = "Lionel Messi"
 
-first_name = player[:(player.find("Messi") - 1)]
+first_name = player[:(player.find(" "))]
 first_name_len = len(first_name)
 
-last_name = player[player.find("Messi"):]
+last_name = player[player.find(" ") + 1:]
 last_name_len = len(last_name)
 
 name_short = f'{first_name[0]}. {last_name}'
 
-chant = ""
+chant = f"{first_name}! " * (first_name_len)
 
-for x in range(first_name_len):
-    chant += f'{first_name}! '
+chant = chant[:-1]
 
-chant = chant[:len(chant) - 1]
-
-good_chant = 2 != 3  # ??? didnt understand
-
-print(chant)
+good_chant = chant[-1] != " "
